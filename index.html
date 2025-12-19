@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>William Bigirimana | Something Big is Coming</title>
+    <meta name="title" content="William Bigirimana | Something Big is Coming">
+    <meta name="description" content="Official website of William Bigirimana. Digital creator, developer, and designer. Something new is currently under construction.">
+    <meta name="keywords" content="William Bigirimana, Will Bigirimana, willbigirimana, William, Bigirimana, Developer, Coming Soon, Portfolio">
+    <meta name="author" content="William Bigirimana">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="William Bigirimana | Coming Soon">
+    <meta property="og:description" content="Something cool is being built by William Bigirimana. Stay tuned.">
+    <meta property="og:image" content="https://ui-avatars.com/api/?name=William+Bigirimana&background=022c22&color=fff&size=600">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap');
+        
+        :root {
+            --primary: #10b981; /* Emerald */
+            --secondary: #0ea5e9; /* Sky Blue */
+            --bg-dark: #020617;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-dark);
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-gradient {
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(2, 6, 23, 1) 0%, rgba(2, 6, 23, 0.8) 100%);
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .mesh {
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(161, 84%, 39%, 0.1) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(199, 89%, 48%, 0.1) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(161, 84%, 39%, 0.1) 0, transparent 50%);
+            filter: blur(60px);
+            animation: meshMove 20s ease infinite;
+            z-index: 0;
+        }
+
+        @keyframes meshMove {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(-5%, 5%) rotate(2deg); }
+            66% { transform: translate(5%, -2%) rotate(-1deg); }
+        }
+
+        .reveal-text {
+            animation: reveal 1.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes reveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .name-gradient {
+            background: linear-gradient(135deg, #fff 30%, rgba(255,255,255,0.5) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 20px rgba(16, 185, 129, 0.2));
+        }
+
+        .floating {
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .status-pill {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pulse-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--primary);
+            animation: dotPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes dotPulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+        }
+
+        .noise {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.04;
+            pointer-events: none;
+            background: url('https://grainy-gradients.vercel.app/noise.svg');
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="text-white p-6">
+
+    <div class="noise"></div>
+    <div class="mesh"></div>
+    <div class="hero-gradient"></div>
+
+    <main class="relative z-10 text-center space-y-10">
+        <!-- Branding -->
+        <div class="reveal-text">
+            <h1 class="text-5xl md:text-9xl font-black tracking-tighter uppercase floating name-gradient">
+                William Bigirimana
+            </h1>
+        </div>
+
+        <!-- Status Pill -->
+        <div class="reveal-text" style="animation-delay: 0.4s;">
+            <div class="status-pill">
+                <div class="pulse-dot"></div>
+                <p class="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-emerald-400">
+                    Something exceptional is under construction
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="absolute bottom-10 z-10 w-full text-center reveal-text" style="animation-delay: 0.8s;">
+        <p class="text-slate-700 font-bold uppercase tracking-[0.5em] text-[8px] hover:text-emerald-500 transition-colors duration-500 cursor-default">
+            EST. <span id="year"></span> • William Bigirimana
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
